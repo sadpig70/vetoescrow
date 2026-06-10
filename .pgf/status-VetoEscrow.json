@@ -1,0 +1,17 @@
+{
+  "project": "VetoEscrow",
+  "source_idea": "IDEA-014",
+  "source_pool": "CIX-20260609-001",
+  "status": "verified",
+  "summary": {
+    "done": 9,
+    "total": 9
+  },
+  "verify": {
+    "acceptance": "passed",
+    "quality": "passed",
+    "architecture": "passed"
+  },
+  "review_iterations": 0,
+  "unresolved_issues": []
+}

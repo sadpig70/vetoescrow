@@ -1,0 +1,153 @@
+{
+  "batch_id": "ve-demo-001",
+  "gate_threshold": 0.62,
+  "decision_count": 4,
+  "bid_count": 3,
+  "locked_count": 3,
+  "released_count": 1,
+  "count_by_outcome": {
+    "released": 1,
+    "held_unclaimed": 1,
+    "modify_right_sold": 1,
+    "veto_right_sold": 1
+  },
+  "total_clearing_price": 2904.95664,
+  "ledger_head": "6f444165ea14262943424b0d8909cf28afeb88bfa0b5d3481955392483bd8405",
+  "issues": [],
+  "awards": [
+    {
+      "decision_id": "d1",
+      "agent": "claims-agent",
+      "action": "deny $42k claim",
+      "risk_score": 0.9007,
+      "clearing_price": 1734.97104,
+      "winning_bid_id": "b1",
+      "supervisor": "legal-desk",
+      "right_type": "veto",
+      "outcome": "veto_right_sold",
+      "timestamp": "2026-06-10T09:01:00Z"
+    },
+    {
+      "decision_id": "d2",
+      "agent": "ops-agent",
+      "action": "reroute warehouse order",
+      "risk_score": 0.4519,
+      "clearing_price": 0.0,
+      "winning_bid_id": "",
+      "supervisor": "",
+      "right_type": "",
+      "outcome": "released",
+      "timestamp": "2026-06-10T09:00:10Z"
+    },
+    {
+      "decision_id": "d3",
+      "agent": "sec-agent",
+      "action": "revoke vendor credential",
+      "risk_score": 0.763,
+      "clearing_price": 1169.9856,
+      "winning_bid_id": "b2",
+      "supervisor": "security-lead",
+      "right_type": "modify",
+      "outcome": "modify_right_sold",
+      "timestamp": "2026-06-10T09:01:05Z"
+    },
+    {
+      "decision_id": "d4",
+      "agent": "pricing-agent",
+      "action": "raise regional price",
+      "risk_score": 0.6758,
+      "clearing_price": 560.0868,
+      "winning_bid_id": "",
+      "supervisor": "",
+      "right_type": "",
+      "outcome": "held_unclaimed",
+      "timestamp": "2026-06-10T09:00:30Z"
+    }
+  ],
+  "ledger": [
+    {
+      "index": 0,
+      "decision_id": "d1",
+      "outcome": "veto_right_sold",
+      "supervisor": "legal-desk",
+      "clearing_price": 1734.97104,
+      "timestamp": "2026-06-10T09:01:00Z",
+      "prev_hash": "212fba6393a19ef5855be729cf526b5c948ef0173c41fb0e081ada1ba75f4d36",
+      "entry_hash": "eeb7a31e30611fbec3eedb1885605ebb945fd83e4fe4664d8ed7c61f051ae133"
+    },
+    {
+      "index": 1,
+      "decision_id": "d2",
+      "outcome": "released",
+      "supervisor": "",
+      "clearing_price": 0.0,
+      "timestamp": "2026-06-10T09:00:10Z",
+      "prev_hash": "eeb7a31e30611fbec3eedb1885605ebb945fd83e4fe4664d8ed7c61f051ae133",
+      "entry_hash": "03bbbe24dd21e98c547fa218674fc8530bd36fe2deab9fdd2d02da3198e7a133"
+    },
+    {
+      "index": 2,
+      "decision_id": "d3",
+      "outcome": "modify_right_sold",
+      "supervisor": "security-lead",
+      "clearing_price": 1169.9856,
+      "timestamp": "2026-06-10T09:01:05Z",
+      "prev_hash": "03bbbe24dd21e98c547fa218674fc8530bd36fe2deab9fdd2d02da3198e7a133",
+      "entry_hash": "912bd0d0553b27fc41d9231f94bf9658ab52121430d1cb73a0916564ff1ddb35"
+    },
+    {
+      "index": 3,
+      "decision_id": "d4",
+      "outcome": "held_unclaimed",
+      "supervisor": "",
+      "clearing_price": 560.0868,
+      "timestamp": "2026-06-10T09:00:30Z",
+      "prev_hash": "912bd0d0553b27fc41d9231f94bf9658ab52121430d1cb73a0916564ff1ddb35",
+      "entry_hash": "6f444165ea14262943424b0d8909cf28afeb88bfa0b5d3481955392483bd8405"
+    }
+  ],
+  "evidence": [
+    {
+      "key": "gate.threshold",
+      "value": 0.62,
+      "unit": "risk_score",
+      "note": "minimum score that locks a decision"
+    },
+    {
+      "key": "risk.low.weight",
+      "value": 0.2,
+      "unit": "weight",
+      "note": "risk weight for low"
+    },
+    {
+      "key": "risk.medium.weight",
+      "value": 0.55,
+      "unit": "weight",
+      "note": "risk weight for medium"
+    },
+    {
+      "key": "risk.high.weight",
+      "value": 0.82,
+      "unit": "weight",
+      "note": "risk weight for high"
+    },
+    {
+      "key": "risk.critical.weight",
+      "value": 1.0,
+      "unit": "weight",
+      "note": "risk weight for critical"
+    },
+    {
+      "key": "right.veto.priority",
+      "value": 2,
+      "unit": "priority",
+      "note": "clearing priority for veto right"
+    },
+    {
+      "key": "right.modify.priority",
+      "value": 1,
+      "unit": "priority",
+      "note": "clearing priority for modify right"
+    }
+  ]
+}

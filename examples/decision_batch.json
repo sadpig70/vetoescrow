@@ -1,0 +1,79 @@
+{
+  "batch_id": "ve-demo-001",
+  "gate_threshold": 0.62,
+  "source": "agentops_gateway",
+  "decisions": [
+    {
+      "id": "d1",
+      "agent": "claims-agent",
+      "action": "deny $42k claim",
+      "risk_class": "critical",
+      "impact": 92,
+      "confidence": 0.61,
+      "stake": 1200,
+      "timestamp": "2026-06-10T09:00:00Z"
+    },
+    {
+      "id": "d2",
+      "agent": "ops-agent",
+      "action": "reroute warehouse order",
+      "risk_class": "medium",
+      "impact": 35,
+      "confidence": 0.82,
+      "stake": 300,
+      "timestamp": "2026-06-10T09:00:10Z"
+    },
+    {
+      "id": "d3",
+      "agent": "sec-agent",
+      "action": "revoke vendor credential",
+      "risk_class": "high",
+      "impact": 80,
+      "confidence": 0.58,
+      "stake": 900,
+      "timestamp": "2026-06-10T09:00:20Z"
+    },
+    {
+      "id": "d4",
+      "agent": "pricing-agent",
+      "action": "raise regional price",
+      "risk_class": "high",
+      "impact": 55,
+      "confidence": 0.77,
+      "stake": 500,
+      "timestamp": "2026-06-10T09:00:30Z"
+    }
+  ],
+  "bids": [
+    {
+      "id": "b1",
+      "decision_id": "d1",
+      "supervisor": "legal-desk",
+      "right_type": "veto",
+      "max_price": 2100,
+      "timestamp": "2026-06-10T09:01:00Z",
+      "rationale": "claim denial requires human legal review"
+    },
+    {
+      "id": "b2",
+      "decision_id": "d3",
+      "supervisor": "security-lead",
+      "right_type": "modify",
+      "max_price": 1300,
+      "timestamp": "2026-06-10T09:01:05Z",
+      "rationale": "scope credential revocation"
+    },
+    {
+      "id": "b3",
+      "decision_id": "d4",
+      "supervisor": "revenue-ops",
+      "right_type": "modify",
+      "max_price": 50,
+      "timestamp": "2026-06-10T09:01:10Z",
+      "rationale": "too cheap, should not clear"
+    }
+  ],
+  "metadata": {
+    "schema_version": "vetoescrow.batch.v0.1"
+  }
+}
